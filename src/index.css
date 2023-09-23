@@ -1,0 +1,108 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background: rgb(209, 209, 209);
+  color: black;
+}
+a{
+  text-decoration: none;
+}
+.full{
+  width: 100%;
+}
+.Navgreen{
+  color: #A4FF63;
+}
+div{
+  width: 100%;
+}
+.btnLink{
+  width: 100%;
+}
+.navBar{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid grey;
+  padding: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.body,.quiz,.review{
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  display: grid;
+  gap: 25px;
+  padding: 10px;
+  text-align: center;
+  justify-content: center;
+}
+.quiz{
+  margin-top: 20px;
+}
+.body div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  
+}
+.body img{
+    width: 100%;
+  height: 400px;
+}
+
+.body div p,
+.quiz p{
+  font-size: 22px;
+}
+.body button{
+  padding: 10px 20px;
+  background: #fff;
+  color: #000;
+  font-size: 20px;
+  width: 100%;
+}
+
+.button-flex{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.button-flex button{
+  padding: 10px 20px;
+  background: #fff;
+  color: #000;
+  font-size: 20px;
+  width: 100%;
+  border: none;
+}
+.red{
+  border: 2px solid red !important;
+}
+.green{
+  border: 2px solid green !important;
+}
+
+.continue{
+ background: green !important;
+ color: #fff !important;
+ text-transform: capitalize;
+}
+.score{
+  font-size: 22px;
+}
+
+.review button{
+    padding: 10px 20px;
+    background: #fff;
+    color: #000;
+    font-size: 20px;
+    width: 100%;
+    border: none;
+}
