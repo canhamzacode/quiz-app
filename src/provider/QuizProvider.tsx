@@ -1,12 +1,12 @@
-import { createContext, useState,ReactNode } from 'react';
-import { Answer,QuizContextType } from '../types/MyType';
+import { createContext, useState, ReactNode } from 'react';
+import { Answer, QuizContextType } from '../types/MyType';
 
 type QuizProviderProps = {
   children: ReactNode;
 };
 const QuizContext = createContext<QuizContextType | undefined>(undefined);
 
-const QuizProvider = ({ children }:QuizProviderProps) => {
+const QuizProvider = ({ children }: QuizProviderProps) => {
   const [answers, setAnswers] = useState<Answer[] | null>(null);
 
   const quizContextValue: QuizContextType = {

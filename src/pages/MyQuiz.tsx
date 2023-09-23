@@ -1,12 +1,11 @@
-import  { useEffect, useState } from 'react'
-import QuizCard from '../components/QuizCard'
-import { Question, Answer } from '../types/MyType';
-
+import { useEffect, useState } from 'react';
+import QuizCard from '../components/QuizCard';
+import { Question } from '../types/MyType';
 
 const MyQuiz = () => {
-  const [quizQuestion,setQuizQuestion] = useState<Question[] | null>();
+  const [quizQuestion, setQuizQuestion] = useState<Question[] | null>();
   const [currentIndex, setCurrentIndex] = useState<number>(0);
-  const [loading,setLoading] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
     setLoading(true);
@@ -19,23 +18,24 @@ const MyQuiz = () => {
       })
       .then((data) => {
         setQuizQuestion(data.results);
-        setLoading(false)
+        setLoading(false);
       })
       .catch((error) => {
         console.error('Error fetching data:', error);
       });
   }, []);
-  
-  if(loading){
+
+  if (loading) {
     return <div>Loading...</div>;
   }
   return (
-    <QuizCard currentIndex={currentIndex} 
-    setCurrentIndex={setCurrentIndex}  
-    length={quizQuestion?.length || 0} 
-    quizData={quizQuestion?.[currentIndex] as Question || {}}
+    <QuizCard
+      currentIndex={currentIndex}
+      setCurrentIndex={setCurrentIndex}
+      length={quizQuestion?.length || 0}
+      quizData={(quizQuestion?.[currentIndex] as Question) || {}}
     />
-  )
-}
+  );
+};
 
-export default MyQuiz
+export default MyQuiz;

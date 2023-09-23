@@ -1,9 +1,7 @@
-import Body from "../components/Body"
+import Body from '../components/Body';
 
 const Home = () => {
-  return (
-   <Body/>
-  )
-}
+  return <Body />;
+};
 
-export default Home
+export default Home;
