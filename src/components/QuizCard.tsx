@@ -2,6 +2,7 @@ import { useEffect, useState, useContext } from 'react';
 import { Answer, Question, QuizContextType } from '../types/MyType';
 import { QuizContext } from '../provider/QuizProvider';
 import { useNavigate } from 'react-router-dom';
+import parse from 'html-react-parser';
 
 interface QuestionProps {
   quizData: Question;
@@ -64,6 +65,7 @@ const QuizCard = ({
         questionIndex: currentIndex,
         selectedAnswer: answer,
         correctAnswer: quizData.correct_answer,
+        myQuestion: quizData.question,
       };
       const updatedPreAnswer = preAnswer
         ? [...preAnswer, newAnswer]
@@ -81,7 +83,7 @@ const QuizCard = ({
       <p>
         {currentIndex + 1} out of 10 ({quizData?.category})
       </p>
-      <h2>{quizData?.question}</h2>
+      {quizData ? <h2>{parse(String(quizData?.question))}</h2> : ''}
       <div className="button-flex">
         <button
           onClick={theTruth}
